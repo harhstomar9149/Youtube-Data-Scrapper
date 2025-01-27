@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <title>YT-Scrapper</title>
+</head>
+<body class="bg-gray-800 text-gray-100">
+    <div class="flex items-center justify-center h-screen">
+        <form th:action="@{/vdetails}" method="post" class="bg-gray-900 p-10 rounded-lg shadow-lg max-w-lg w-full">
+            <h1 class="text-4xl font-extrabold text-center mb-6 text-blue-400">
+                YouTube Video Data Scrapper
+            </h1>
+            
+            <label for="videoLink" class="block text-xl font-semibold mb-2">
+                Enter Your Video Link
+            </label>
+            
+            <input
+                class="w-full p-3 border border-gray-700 rounded-md bg-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                type="text"
+                name="videoLink"
+                id="videoLink"
+                placeholder="Paste your YouTube video link here"
+                required>
+            
+            <button
+                class="w-full mt-6 py-3 bg-blue-500 hover:bg-blue-600 text-white text-xl font-semibold rounded-md shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-300">
+                Click Here
+            </button>
+        </form>
+    </div>
+</body>
+</html>

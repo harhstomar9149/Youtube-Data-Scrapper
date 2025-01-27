@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Yt-Scrapper</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+ </head>
+ <body class="font-sans text-gray-800 bg-gray-800 text-white">
+    
+    <div th:if="${videoDetails}" class="max-w-4xl mx-auto mt-8 p-6 bg-gray-900 rounded shadow-md text-white">
+        <div class="text-center mb-6">
+            <span class="text-3xl font-bold">YouTube Video Details | </span>
+            <a th:href="@{/}" class="text-blue-500 hover:bg-white text-3xl"> Find New 🔍</a>
+            <hr>
+        </div>
+
+        <div class="mb-6">
+            <label for="title" class="font-bold text-3xl text-green-500">Title:</label>
+            <span id="title" th:text="${title}" th:data-content="${title}" class="text-xl font-semibold mt-2"></span>
+           
+        </div>
+
+        <div class="mb-6">
+            <label for="thumbnail" class="text-3xl font-bold text-green-500">Thumbnail:</label>
+            <div class="mt-2">
+                <img id="thumbnail" th:src="${thumbnailUrl}" alt="Video Thumbnail" th:data-content="${thumbnailUrl}" class="max-w-full h-auto"/>
+            </div>
+        </div>
+
+        <div class="mb-6">
+            <label for="tags" class="mr-2">Tags:</label>
+            <span id="tags" th:each="tag : ${tags}" th:text="${tag} + ', '" th:data-content="${tags}" class="font-semibold"></span>
+        </div>
+
+        <div>
+            <label for="description" class="mr-2">Description:</label>
+            <p id="description" th:text="${description}" th:data-content="${description}" class="mt-2"></p>
+        </div>
+   </div>
+
+</body>
+</html>
